@@ -14,8 +14,8 @@
     <meta property="og:url" content="https://www.yournewdomain.com"> <!-- Replace with your actual domain -->
     <meta property="og:type" content="website">
 
-    <!-- Favicon - Simple 'R' for Robin -->
-    <link rel="icon" href="https://placehold.co/32x32/0369a1/ffffff?text=R&font=sans" type="image/png">
+    <!-- Favicon -->
+    <link rel="icon" href="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760928830/ChatGPT_Image_Aug_26_2025_12_43_26_PM_mkiqo8.png" type="image/png">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -42,9 +42,9 @@
         }
         .hero-bg {
             height: 90vh;
-            background-image: url('https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760661407/fde22b39-f4de-4fb0-a2c3-4a6a30986421_uc0ee8.avif');
+            background-image: url('https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760928367/kirk-van-nort-mPKQ1BrJPdU-unsplash_pietfi.jpg');
             background-size: cover;
-            background-position: center 25%;
+            background-position: center center;
         }
         .hero-text-shadow {
             text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
@@ -59,6 +59,18 @@
         .page-content.active {
             display: block;
         }
+        /* Accordion Styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-button svg {
+            transition: transform 0.3s ease;
+        }
+        .accordion-button.open svg {
+            transform: rotate(45deg);
+        }
     </style>
     
     <!-- 
@@ -70,14 +82,14 @@
       "@type": "TravelAgency",
       "name": "Robin Coastal Rentals",
       "description": "Premier property management and vacation rental company in Myrtle Beach, SC.",
-      "telephone": "+1-555-555-5555",
+      "telephone": "+1-703-728-2627",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Myrtle Beach",
         "addressRegion": "SC",
         "addressCountry": "US"
       },
-      "image": "https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760661407/fde22b39-f4de-4fb0-a2c3-4a6a30986421_uc0ee8.avif",
+      "image": "https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760928367/kirk-van-nort-mPKQ1BrJPdU-unsplash_pietfi.jpg",
       "url": "https://www.yournewdomain.com"
     }
     </script>
@@ -87,20 +99,38 @@
     <!-- Header -->
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-sky-800 page-link">
-                Robin Coastal Rentals
+            <a href="#home" class="page-link z-50">
+                <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760928830/ChatGPT_Image_Aug_26_2025_12_43_26_PM_mkiqo8.png" alt="Robin Coastal Rentals Logo" class="h-16">
             </a>
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#home" class="text-slate-600 hover:text-sky-700 transition duration-300 page-link">Home</a>
                 <a href="#properties" class="text-slate-600 hover:text-sky-700 transition duration-300">Our Properties</a>
                 <a href="#services-page" class="text-slate-600 hover:text-sky-700 transition duration-300 page-link">Property Management</a>
-                <a href="#about" class="text-slate-600 hover:text-sky-700 transition duration-300">About Us</a>
                 <a href="#contact-page" class="text-slate-600 hover:text-sky-700 transition duration-300 page-link">Contact</a>
             </div>
-            <a href="#properties" class="bg-sky-700 text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-sky-800 transition transform hover:-translate-y-0.5 duration-300">
+            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties?minOccupancy=1" target="_blank" class="hidden md:inline-block bg-sky-700 text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-sky-800 transition transform hover:-translate-y-0.5 duration-300">
                 Book Your Stay
             </a>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-slate-800 focus:outline-none z-50">
+                    <i data-feather="menu" class="h-8 w-8"></i>
+                </button>
+            </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white z-40">
+            <div class="flex flex-col justify-center items-center h-full space-y-8 text-2xl">
+                <a href="#home" class="mobile-menu-link text-slate-800 hover:text-sky-700">Home</a>
+                <a href="#properties" class="mobile-menu-link text-slate-800 hover:text-sky-700">Our Properties</a>
+                <a href="#services-page" class="mobile-menu-link text-slate-800 hover:text-sky-700">Property Management</a>
+                <a href="#contact-page" class="mobile-menu-link text-slate-800 hover:text-sky-700">Contact</a>
+                <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties?minOccupancy=1" target="_blank" class="mt-4 bg-sky-700 text-white font-bold py-3 px-8 rounded-lg">
+                    Book Your Stay
+                </a>
+            </div>
+        </div>
     </header>
 
     <!-- Main Content Wrapper (for guests) -->
@@ -110,8 +140,8 @@
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="container mx-auto px-6 relative z-10 text-center">
                 <div class="max-w-3xl mx-auto">
-                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 hero-text-shadow">Your Perfect Myrtle Beach Escape</h1>
-                    <p class="text-lg md:text-xl text-slate-200 hero-text-shadow">Discover our collection of beautiful, professionally managed vacation homes and create memories that last a lifetime.</p>
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 hero-text-shadow">Your Coastal Stay in Myrtle Beach.</h1>
+                    <p class="text-lg md:text-xl text-slate-200 hero-text-shadow">A curated collection of professionally managed homes for a clean, comfortable, and seamless stay.</p>
                      <a href="#properties" class="mt-8 bg-white text-sky-700 font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-slate-100 transition transform hover:scale-105 duration-300 inline-block">
                         View Our Properties
                     </a>
@@ -137,53 +167,53 @@
                         </div>
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-2 text-slate-900">Firefly Cottage</h3>
-                            <p class="text-slate-600 mb-4">A stylish 3-bedroom beach house just 2.5 blocks from the ocean. Perfect for families seeking a modern retreat.</p>
+                            <p class="text-slate-600 mb-4">A modern 3-bedroom beach house, just 2.5 blocks from the beach. Enjoy the open-concept living area, private patio, and a stylish coastal getaway.</p>
                              <div class="flex items-center text-slate-500 text-sm mb-4 space-x-4">
+                                <span>3 Bedrooms</span>
+                                <span class="text-slate-300">•</span>
+                                <span>2.5 Bathrooms</span>
+                                <span class="text-slate-300">•</span>
+                                <span>Sleeps 9</span>
+                            </div>
+                            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties/689f930fd205f500101607be?minOccupancy=1" target="_blank" class="bg-sky-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 2: Rosemary Retreat -->
+                    <div class="bg-slate-50 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group property-card">
+                        <div class="overflow-hidden">
+                            <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760927931/Screenshot_2025-10-19_7.30.45_PM_q7hfhz.png" alt="Image of Rosemary Retreat property" class="w-full h-64 object-cover property-card-img">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 text-slate-900">Rosemary Retreat</h3>
+                            <p class="text-slate-600 mb-4">Make lasting memories in this cozy retreat! Located in a family-friendly neighborhood with a golf cart included for convenient beach access.</p>
+                             <div class="flex items-center text-slate-500 text-sm mb-4 space-x-4">
+                                <span>3 Bedrooms</span>
+                                <span class="text-slate-300">•</span>
+                                <span>2 Bathrooms</span>
+                                <span class="text-slate-300">•</span>
+                                <span>Sleeps 10</span>
+                            </div>
+                            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties/689f93161a60d000133a35b3?minOccupancy=1" target="_blank" class="bg-sky-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
+                        </div>
+                    </div>
+
+                    <!-- Property Card 3: Shore Dr Sunset Retreat -->
+                    <div class="bg-slate-50 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group property-card">
+                        <div class="overflow-hidden">
+                            <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760927931/Screenshot_2025-10-19_7.31.28_PM_t5zoxy.png" alt="Image of Shore Dr Sunset Retreat property" class="w-full h-64 object-cover property-card-img">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2 text-slate-900">Shore Dr Sunset Retreat</h3>
+                            <p class="text-slate-600 mb-4">Steps from the beach, this cozy condo is perfect for families and golfers. Walk to Ocean Annie's, restaurants, and live music!</p>
+                            <div class="flex items-center text-slate-500 text-sm mb-4 space-x-4">
                                 <span>3 Bedrooms</span>
                                 <span class="text-slate-300">•</span>
                                 <span>2 Bathrooms</span>
                                 <span class="text-slate-300">•</span>
                                 <span>Sleeps 8</span>
                             </div>
-                            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties/689f930fd205f500101607be?minOccupancy=1" class="bg-sky-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
-                        </div>
-                    </div>
-
-                    <!-- Property Card 2: The Sandpiper Condo -->
-                    <div class="bg-slate-50 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group property-card">
-                        <div class="overflow-hidden">
-                            <img src="https://placehold.co/600x400/a5f3fc/083344?text=The+Sandpiper+Condo" alt="Ocean view from The Sandpiper Condo" class="w-full h-64 object-cover property-card-img">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-slate-900">The Sandpiper Condo</h3>
-                            <p class="text-slate-600 mb-4">Enjoy breathtaking ocean views from this beautifully appointed 2-bedroom condo with direct beach access.</p>
-                             <div class="flex items-center text-slate-500 text-sm mb-4 space-x-4">
-                                <span>2 Bedrooms</span>
-                                <span class="text-slate-300">•</span>
-                                <span>2 Bathrooms</span>
-                                <span class="text-slate-300">•</span>
-                                <span>Sleeps 6</span>
-                            </div>
-                            <a href="#" class="bg-sky-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
-                        </div>
-                    </div>
-
-                    <!-- Property Card 3: Ocean View Villa -->
-                    <div class="bg-slate-50 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group property-card">
-                        <div class="overflow-hidden">
-                            <img src="https://placehold.co/600x400/e0f2fe/083344?text=Ocean+View+Villa" alt="Spacious interior of Ocean View Villa" class="w-full h-64 object-cover property-card-img">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold mb-2 text-slate-900">Ocean View Villa</h3>
-                            <p class="text-slate-600 mb-4">A luxurious 5-bedroom villa with a private pool and stunning marsh views, ideal for large groups and gatherings.</p>
-                            <div class="flex items-center text-slate-500 text-sm mb-4 space-x-4">
-                                <span>5 Bedrooms</span>
-                                <span class="text-slate-300">•</span>
-                                <span>4 Bathrooms</span>
-                                <span class="text-slate-300">•</span>
-                                <span>Sleeps 14</span>
-                            </div>
-                            <a href="#" class="bg-sky-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
+                            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties/68bdf98ebec94b0010e6ead8?minOccupancy=1" target="_blank" class="bg-sky-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
                         </div>
                     </div>
                 </div>
@@ -262,35 +292,6 @@
             </div>
         </section>
 
-        <!-- Property Management CTA Section -->
-        <section id="services" class="py-20 bg-sky-700 text-white">
-            <div class="container mx-auto px-6 text-center">
-                 <div class="max-w-3xl mx-auto">
-                    <h2 class="text-4xl font-bold">Maximize Your Rental Income</h2>
-                    <p class="mt-4 text-lg text-sky-200">Partner with Robin Coastal Rentals and turn your property into a successful, stress-free investment. We treat your home like our own.</p>
-                    <a href="#services-page" class="page-link mt-12 bg-white text-sky-700 font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-slate-100 transition transform hover:scale-105 duration-300 inline-block">
-                        Learn About Our Services
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Robin Section -->
-        <section id="about" class="py-20 bg-slate-50">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/3">
-                        <img src="https://placehold.co/400x400/0ea5e9/f0f9ff?text=Robin" alt="Photo of Robin, property manager" class="rounded-full shadow-xl mx-auto">
-                    </div>
-                    <div class="md:w-2/3 text-center md:text-left">
-                        <h2 class="text-4xl font-bold text-slate-900">Your Professional Host in Myrtle Beach</h2>
-                        <p class="text-slate-700 mt-4 text-lg">"Hi, I'm Robin! With years of experience in real estate and hospitality, I founded Robin Coastal Rentals to provide a superior vacation experience for guests and exceptional property management for homeowners. My passion is sharing the beauty of Myrtle Beach and ensuring every stay is perfect and every owner is successful. I'm dedicated to providing a 5-star, seamless experience from start to finish. Welcome to our coastal family!"</p>
-                        <p class="mt-4 font-bold text-slate-800">- Robin S.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Guest Reviews -->
         <section id="reviews" class="py-20 bg-white">
             <div class="container mx-auto px-6">
@@ -319,7 +320,33 @@
             <div class="container mx-auto px-6 text-center text-white">
                 <h2 class="text-4xl font-bold">Your Myrtle Beach Escape Awaits</h2>
                 <p class="mt-4 text-lg max-w-2xl mx-auto text-sky-200">Ready for sunshine and ocean breezes? Find your perfect rental and book direct for the best experience.</p>
-                <a href="#properties" class="bg-white text-sky-700 font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-slate-100 transition transform hover:scale-105 duration-300 mt-10 inline-block">
+
+                <!-- Direct Booking Benefits -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+                    <div class="flex items-center justify-center md:flex-col">
+                        <i data-feather="dollar-sign" class="h-8 w-8 text-white mr-3 md:mr-0 md:mb-2"></i>
+                        <div class="text-left md:text-center">
+                            <h3 class="font-bold">Best Rate Guaranteed</h3>
+                            <p class="text-sky-200 text-sm">Avoid third-party fees</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center md:flex-col">
+                        <i data-feather="message-circle" class="h-8 w-8 text-white mr-3 md:mr-0 md:mb-2"></i>
+                         <div class="text-left md:text-center">
+                            <h3 class="font-bold">Direct Communication</h3>
+                            <p class="text-sky-200 text-sm">Personalized service</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center md:flex-col">
+                        <i data-feather="gift" class="h-8 w-8 text-white mr-3 md:mr-0 md:mb-2"></i>
+                         <div class="text-left md:text-center">
+                            <h3 class="font-bold">Exclusive Perks</h3>
+                            <p class="text-sky-200 text-sm">Early check-in options</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties?minOccupancy=1" target="_blank" class="bg-white text-sky-700 font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-slate-100 transition transform hover:scale-105 duration-300 mt-12 inline-block">
                     Browse All Properties
                 </a>
                  <p class="mt-6 text-sky-200 text-sm">
@@ -329,63 +356,229 @@
         </section>
     </main>
 
-    <!-- [NEW & REVISED] Property Management Services Page -->
-    <section id="services-page" class="page-content py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900">Your Partner in Success</h1>
+    <!-- [FULLY REDESIGNED] Property Management Services Page -->
+    <section id="services-page" class="page-content bg-white">
+        <div class="container mx-auto px-6 py-20">
+            
+            <!-- 1. The Hook -->
+            <div class="text-center mb-20">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900">Maximize Your Income. Minimize Your Stress.</h1>
                 <p class="text-slate-600 mt-4 max-w-3xl mx-auto text-lg">
-                    We offer a comprehensive, hands-on approach to property management, designed to maximize your revenue, protect your investment, and provide a five-star experience for every guest.
+                    We provide unparalleled care for your Myrtle Beach home, turning your investment into a thriving, worry-free asset.
                 </p>
+                <a href="#contact-page" class="page-link mt-8 bg-sky-700 text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-sky-600 transition transform hover:scale-105 duration-300 inline-block">
+                    Get Your Free Consultation
+                </a>
             </div>
 
-            <!-- Core Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left mb-20">
-                <!-- Service Card 1: Marketing & Bookings -->
-                <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
-                    <div class="flex items-center mb-4">
-                        <i data-feather="trending-up" class="h-8 w-8 text-sky-700 mr-4 flex-shrink-0"></i>
-                        <h3 class="text-2xl font-bold text-slate-800">Marketing & Bookings</h3>
-                    </div>
-                    <ul class="space-y-3 text-slate-600 list-disc list-inside">
-                        <li>Professional Photography & Videography</li>
-                        <li>Listings on Airbnb, Vrbo & Direct Booking Site</li>
-                        <li>Dynamic Pricing for Revenue Optimization</li>
-                        <li>24/7 Guest Inquiry Response</li>
-                        <li>Seamless Calendar & Booking Management</li>
-                    </ul>
+            <!-- 2. The Foundation: Personal Trust -->
+            <div class="bg-slate-50 rounded-lg p-10 md:p-16 flex flex-col md:flex-row-reverse items-center gap-12 mb-20">
+                <div class="md:w-1/3 text-center">
+                    <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760928106/Screenshot_2025-10-19_7.41.01_PM_kufmug.png" alt="Photo of Robin, property manager" class="rounded-full shadow-xl mx-auto w-48 h-48 md:w-64 md:h-64 object-cover">
                 </div>
-                <!-- Service Card 2: Guest Experience -->
-                <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
-                    <div class="flex items-center mb-4">
-                        <i data-feather="users" class="h-8 w-8 text-sky-700 mr-4 flex-shrink-0"></i>
-                        <h3 class="text-2xl font-bold text-slate-800">Guest Experience</h3>
-                    </div>
-                    <ul class="space-y-3 text-slate-600 list-disc list-inside">
-                        <li>24/7 Guest Support & Concierge</li>
-                        <li>Keyless Smart Lock Installation</li>
-                        <li>Professional Housekeeping & Inspections</li>
-                        <li>Stocking of Welcome Amenities</li>
-                        <li>Local Guidebooks & Recommendations</li>
-                    </ul>
-                </div>
-                <!-- Service Card 3: Home Care & Maintenance -->
-                <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
-                    <div class="flex items-center mb-4">
-                        <i data-feather="shield" class="h-8 w-8 text-sky-700 mr-4 flex-shrink-0"></i>
-                        <h3 class="text-2xl font-bold text-slate-800">Home Care & Maintenance</h3>
-                    </div>
-                    <ul class="space-y-3 text-slate-600 list-disc list-inside">
-                        <li>Regular Property Inspections</li>
-                        <li>Coordination of All Repairs & Maintenance</li>
-                        <li>Preventative Maintenance Programs</li>
-                        <li>Hurricane & Storm Preparation</li>
-                        <li>Vendor & Contractor Management</li>
-                    </ul>
+                <div class="md:w-2/3 text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-slate-900">A Personal Commitment from Your Local Partner</h2>
+                    <p class="text-slate-700 mt-4 text-lg">"As a Myrtle Beach local and property owner myself, I understand the importance of trust and communication. When you partner with us, you're not just another number; you're a valued neighbor. I am personally invested in the success of your property and am always just a phone call away. My promise is to care for your home with the same dedication I give my own."</p>
+                    <p class="mt-4 font-bold text-slate-800">- Robin S., Founder</p>
                 </div>
             </div>
 
-            <!-- Owner Dashboard & Reporting Section -->
+            <!-- 3. The Proof: Owner Testimonials -->
+            <div class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900">What Our Homeowners Say</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
+                        <p class="text-slate-600 italic">"Partnering with Robin was the best decision we made for our rental property. Our booking calendar has never been this full, and the process is completely hands-off for us. The peace of mind is priceless."</p>
+                        <p class="font-bold mt-4">- Joe</p>
+                    </div>
+                    <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
+                        <p class="text-slate-600 italic">"The professionalism and attention to detail are second to none. Robin's team treats our home with incredible care, and the owner dashboard makes it so easy to see our financial performance. Highly recommend!"</p>
+                        <p class="font-bold mt-4">- Gerry</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. The "What": Core Services Accordion -->
+            <div class="text-center mb-20">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Our Comprehensive Management Services</h2>
+                <p class="text-slate-600 mt-2 max-w-3xl mx-auto text-lg mb-12">We handle every detail so you can enjoy the benefits of ownership without the hassle. Click each service to learn more.</p>
+                <div class="max-w-4xl mx-auto text-left space-y-4">
+                    <!-- Accordion Item 1 -->
+                    <div class="bg-slate-50 rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
+                            <span class="flex items-center"><i data-feather="camera" class="mr-4 text-sky-700"></i>Listing & Photography</span>
+                            <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-2">
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside border-t pt-4">
+                                    <li>Professional Photos</li>
+                                    <li>Compelling Descriptions</li>
+                                    <li>Virtual Tour Creation</li>
+                                    <li>Staging Advice</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Accordion Item 2 -->
+                    <div class="bg-slate-50 rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
+                             <span class="flex items-center"><i data-feather="globe" class="mr-4 text-sky-700"></i>Multi-Channel Marketing</span>
+                             <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-2">
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside border-t pt-4">
+                                    <li>Airbnb & Vrbo</li>
+                                    <li>Booking.com</li>
+                                    <li>Google Vacation Rentals</li>
+                                    <li>Direct Booking Site</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 3 -->
+                    <div class="bg-slate-50 rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
+                             <span class="flex items-center"><i data-feather="dollar-sign" class="mr-4 text-sky-700"></i>Revenue Management</span>
+                             <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-2">
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside border-t pt-4">
+                                    <li>Dynamic Pricing</li>
+                                    <li>Seasonal Adjustments</li>
+                                    <li>Competitor Analysis</li>
+                                    <li>Discount Strategies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 4 -->
+                    <div class="bg-slate-50 rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
+                             <span class="flex items-center"><i data-feather="message-circle" class="mr-4 text-sky-700"></i>Guest Communication</span>
+                             <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
+                        </button>
+                        <div class="accordion-content">
+                             <div class="p-6 pt-2">
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside border-t pt-4">
+                                    <li>Rapid Inquiry Response</li>
+                                    <li>Guest Screening</li>
+                                    <li>Booking Management</li>
+                                    <li>Review Management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Accordion Item 5 -->
+                    <div class="bg-slate-50 rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
+                             <span class="flex items-center"><i data-feather="star" class="mr-4 text-sky-700"></i>24/7 Guest Experience</span>
+                             <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-2">
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside border-t pt-4">
+                                    <li>24/7 In-Stay Support</li>
+                                    <li>Local Recommendations</li>
+                                    <li>Concierge Services</li>
+                                    <li>Welcome Packages</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 6 -->
+                    <div class="bg-slate-50 rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
+                             <span class="flex items-center"><i data-feather="cpu" class="mr-4 text-sky-700"></i>Technology & Automation</span>
+                             <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-2">
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside border-t pt-4">
+                                    <li>Keyless Smart Locks</li>
+                                    <li>Calendar Sync</li>
+                                    <li>Noise Monitoring</li>
+                                    <li>Automated Messaging</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 7 -->
+                    <div class="bg-slate-50 rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
+                             <span class="flex items-center"><i data-feather="settings" class="mr-4 text-sky-700"></i>On-the-Ground Operations</span>
+                             <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-2">
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside border-t pt-4">
+                                    <li>Amenity Stocking</li>
+                                    <li>Local Guidebook Creation</li>
+                                    <li>Regular Inspections</li>
+                                    <li>Pre-Arrival Checks</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 8 -->
+                    <div class="bg-slate-50 rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
+                            <span class="flex items-center"><i data-feather="wind" class="mr-4 text-sky-700"></i>Pristine Housekeeping</span>
+                            <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-2">
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside border-t pt-4">
+                                    <li>Professional Cleaning</li>
+                                    <li>Post-Stay Inspections</li>
+                                    <li>Luxury Linen Service</li>
+                                    <li>Deep Clean Scheduling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Accordion Item 9 -->
+                    <div class="bg-slate-50 rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
+                            <span class="flex items-center"><i data-feather="tool" class="mr-4 text-sky-700"></i>Proactive Maintenance</span>
+                            <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-2">
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside border-t pt-4">
+                                    <li>Regular Property Checks</li>
+                                    <li>Repair Coordination</li>
+                                    <li>Preventative Maintenance</li>
+                                    <li>Trusted Vendor Network</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Accordion Item 10 -->
+                    <div class="bg-slate-50 rounded-lg">
+                        <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
+                            <span class="flex items-center"><i data-feather="file-text" class="mr-4 text-sky-700"></i>Transparent Financials</span>
+                            <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-6 pt-2">
+                                <ul class="space-y-3 text-slate-600 list-disc list-inside border-t pt-4">
+                                    <li>Secure Owner Portal</li>
+                                    <li>Detailed Monthly Statements</li>
+                                    <li>Lodging & Tax Management</li>
+                                    <li>No Hidden Fees</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. The Differentiator: Guesty Dashboard -->
             <div class="bg-sky-700 text-white rounded-lg p-10 md:p-16 flex flex-col md:flex-row items-center gap-8 mb-20">
                 <div class="md:w-1/3 text-center">
                     <i data-feather="bar-chart-2" class="h-24 w-24 mx-auto text-sky-300 mb-4"></i>
@@ -397,27 +590,10 @@
                     <p class="text-sky-200 mb-4 text-lg">
                         We believe in full transparency. As a partner, you'll receive exclusive access to a secure owner portal where you can view your property's performance in real-time. Track bookings, view financial statements, and block your own vacation dates with ease, 24/7. It's your investment, and you deserve to have all the information at your fingertips.
                     </p>
-                    <ul class="space-y-2 text-sky-200">
-                        <li class="flex items-start"><i data-feather="check" class="h-5 w-5 mr-2 mt-1 text-sky-300"></i><span>Secure Portal with Real-Time Data</span></li>
-                        <li class="flex items-start"><i data-feather="check" class="h-5 w-5 mr-2 mt-1 text-sky-300"></i><span>Detailed Monthly Financial Statements</span></li>
-                        <li class="flex items-start"><i data-feather="check" class="h-5 w-5 mr-2 mt-1 text-sky-300"></i><span>Management of All Lodging & Sales Taxes</span></li>
-                    </ul>
                 </div>
             </div>
 
-            <!-- [NEW] Personal Commitment Section -->
-            <div class="bg-slate-50 rounded-lg p-10 md:p-16 flex flex-col md:flex-row-reverse items-center gap-12 mb-20">
-                <div class="md:w-1/3 text-center">
-                    <img src="https://placehold.co/400x400/0ea5e9/f0f9ff?text=Robin" alt="Photo of Robin, property manager" class="rounded-full shadow-xl mx-auto w-48 h-48 md:w-64 md:h-64 object-cover">
-                </div>
-                <div class="md:w-2/3 text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-slate-900">A Personal Commitment from Your Local Partner</h2>
-                    <p class="text-slate-700 mt-4 text-lg">"As a Myrtle Beach local and property owner myself, I understand the importance of trust and communication. When you partner with us, you're not just another number; you're a valued neighbor. I am personally invested in the success of your property and am always just a phone call away. My promise is to care for your home with the same dedication I give my own."</p>
-                    <p class="mt-4 font-bold text-slate-800">- Robin S., Founder</p>
-                </div>
-            </div>
-            
-            <!-- [NEW] Our Simple Process Section -->
+            <!-- 6. The "How": Simple Process -->
             <div class="text-center mb-20">
                 <h2 class="text-3xl font-bold text-slate-900 mb-12">Our Simple Onboarding Process</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-5xl mx-auto">
@@ -450,24 +626,7 @@
                 </div>
             </div>
 
-            <!-- [NEW] Owner Testimonials Section -->
-            <div class="mb-20">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-slate-900">What Our Homeowners Say</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
-                        <p class="text-slate-600 italic">"Partnering with Robin was the best decision we made for our rental property. Our booking calendar has never been this full, and the process is completely hands-off for us. The peace of mind is priceless."</p>
-                        <p class="font-bold mt-4">- David & Susan L.</p>
-                    </div>
-                    <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
-                        <p class="text-slate-600 italic">"The professionalism and attention to detail are second to none. Robin's team treats our home with incredible care, and the owner dashboard makes it so easy to see our financial performance. Highly recommend!"</p>
-                        <p class="font-bold mt-4">- Mark Chen</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Final CTA on Services Page -->
+            <!-- 7. The Final Nudge: Final CTA -->
             <div class="text-center">
                 <h2 class="text-3xl font-bold text-slate-900">Let's Partner Together</h2>
                 <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Ready to learn how much your property could earn? Contact us today for a free, no-obligation consultation and income projection.</p>
@@ -526,7 +685,7 @@
                             <i data-feather="phone" class="h-6 w-6 text-sky-700"></i>
                             <div>
                                 <h4 class="font-semibold">Phone</h4>
-                                <a href="tel:+15555555555" class="text-sky-600 hover:underline">+1 (555) 555-5555</a>
+                                <a href="tel:+17037282627" class="text-sky-600 hover:underline">(703) 728-2627</a>
                             </div>
                          </div>
                      </div>
@@ -549,8 +708,9 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                 <div class="mb-6 md:mb-0">
-                     <h3 class="text-xl font-bold text-white mb-2">Robin Coastal Rentals</h3>
-                    <p class="text-slate-400">Your home for premier vacation rentals in beautiful Myrtle Beach, SC.</p>
+                     <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760928830/ChatGPT_Image_Aug_26_2025_12_43_26_PM_mkiqo8.png" alt="Robin Coastal Rentals Logo" class="h-12 footer-logo mb-4 mx-auto md:mx-0">
+                    <p class="text-slate-300 italic">Relax, Stay, Repeat.</p>
+                    <p class="text-slate-300 mt-2">Your home for premier vacation rentals in beautiful Myrtle Beach, SC.</p>
                 </div>
 
                 <div class="mb-6 md:mb-0">
@@ -558,7 +718,7 @@
                     <ul class="space-y-2">
                         <li><a href="#home" class="hover:text-sky-400 transition-colors page-link">Home</a></li>
                         <li><a href="#services-page" class="hover:text-sky-400 transition-colors page-link">Property Management</a></li>
-                        <li><a href="#about" class="hover:text-sky-400 transition-colors">About Us</a></li>
+                        <li><a href="https://www.robinsellsatthebeach.com/" target="_blank" class="hover:text-sky-400 transition-colors">Real Estate Services</a></li>
                         <li><a href="#contact-page" class="hover:text-sky-400 transition-colors page-link">Contact</a></li>
                     </ul>
                 </div>
@@ -582,37 +742,84 @@
         // Page Navigation Logic
         document.addEventListener('DOMContentLoaded', () => {
             const pageLinks = document.querySelectorAll('.page-link');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
             const pageContents = document.querySelectorAll('.page-content');
             const mainContent = document.getElementById('home');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuIcon = mobileMenuButton.querySelector('i');
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.setAttribute('data-feather', 'menu');
+                feather.replace();
+            }
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuIcon.setAttribute('data-feather', 'x');
+                feather.replace();
+            }
+
+            // Toggle mobile menu
+            mobileMenuButton.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('hidden')) {
+                    openMobileMenu();
+                } else {
+                    closeMobileMenu();
+                }
+            });
+
+            // Page link functionality
+            function handlePageLinkClick(event) {
+                const targetId = this.getAttribute('href').substring(1);
+                
+                if (document.getElementById(targetId) && document.getElementById(targetId).closest('#home')) {
+                     pageContents.forEach(content => content.classList.remove('active'));
+                     if(mainContent) mainContent.classList.add('active');
+                } else {
+                    event.preventDefault();
+                    pageContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    const targetPage = document.getElementById(targetId);
+                    if(targetPage) {
+                       targetPage.classList.add('active');
+                       window.scrollTo(0, 0); 
+                    } else if (targetId === 'home') {
+                       if(mainContent) mainContent.classList.add('active');
+                       window.scrollTo(0, 0);
+                    }
+                }
+                if (!mobileMenu.classList.contains('hidden')) {
+                    closeMobileMenu();
+                }
+            }
+
+            pageLinks.forEach(link => {
+                link.addEventListener('click', handlePageLinkClick);
+            });
+            mobileMenuLinks.forEach(link => {
+                 link.addEventListener('click', handlePageLinkClick);
+            });
+
 
             // Set the main content to be active by default
             if(mainContent) {
                 mainContent.classList.add('active');
             }
 
-            pageLinks.forEach(link => {
-                link.addEventListener('click', (event) => {
-                    const targetId = link.getAttribute('href').substring(1);
-                    
-                    // For smooth scrolling on the main page
-                    if (document.getElementById(targetId) && document.getElementById(targetId).closest('#home')) {
-                         pageContents.forEach(content => content.classList.remove('active'));
-                         if(mainContent) mainContent.classList.add('active');
-                         // Let the browser handle the smooth scroll
+            // Accordion Logic
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    button.classList.toggle('open');
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
                     } else {
-                        // For switching to a different page section
-                        event.preventDefault();
-                        pageContents.forEach(content => {
-                            content.classList.remove('active');
-                        });
-                        const targetPage = document.getElementById(targetId);
-                        if(targetPage) {
-                           targetPage.classList.add('active');
-                           window.scrollTo(0, 0); // Scroll to top of new page
-                        } else if (targetId === 'home') {
-                           if(mainContent) mainContent.classList.add('active');
-                           window.scrollTo(0, 0);
-                        }
+                        // Set max-height to the scrollHeight of the inner div
+                        content.style.maxHeight = content.firstElementChild.scrollHeight + "px";
                     }
                 });
             });
@@ -620,6 +827,4 @@
     </script>
 </body>
 </html>
-
-
 
