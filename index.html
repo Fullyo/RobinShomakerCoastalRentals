@@ -28,6 +28,21 @@
     <!-- Feather Icons for simple icons -->
     <script src="https://unpkg.com/feather-icons"></script>
 
+    <!-- [NEW] Custom Tailwind Brand Color Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand': '#007780',
+                        'brand-dark': '#005f66', // A darker shade for hovers
+                        'accent': '#ffc046', // New orange accent color
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -104,12 +119,12 @@
             </a>
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="text-slate-600 hover:text-sky-700 transition duration-300 page-link">Home</a>
-                <a href="#properties" class="text-slate-600 hover:text-sky-700 transition duration-300">Our Properties</a>
-                <a href="#services-page" class="text-slate-600 hover:text-sky-700 transition duration-300 page-link">Property Management</a>
-                <a href="#contact-page" class="text-slate-600 hover:text-sky-700 transition duration-300 page-link">Contact</a>
+                <a href="#home" class="text-slate-600 hover:text-brand transition duration-300 page-link">Home</a>
+                <a href="#properties" class="text-slate-600 hover:text-brand transition duration-300">Our Properties</a>
+                <a href="#services-page" class="text-slate-600 hover:text-brand transition duration-300 page-link">Property Management</a>
+                <a href="#contact-page" class="text-slate-600 hover:text-brand transition duration-300 page-link">Contact</a>
             </div>
-            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties?minOccupancy=1" target="_blank" class="hidden md:inline-block bg-sky-700 text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-sky-800 transition transform hover:-translate-y-0.5 duration-300">
+            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties?minOccupancy=1" target="_blank" class="hidden md:inline-block bg-brand text-white font-bold py-2 px-5 rounded-lg shadow-lg hover:bg-brand-dark transition transform hover:-translate-y-0.5 duration-300">
                 Book Your Stay
             </a>
             <!-- Mobile Menu Button -->
@@ -122,11 +137,11 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-white z-40">
             <div class="flex flex-col justify-center items-center h-full space-y-8 text-2xl">
-                <a href="#home" class="mobile-menu-link text-slate-800 hover:text-sky-700">Home</a>
-                <a href="#properties" class="mobile-menu-link text-slate-800 hover:text-sky-700">Our Properties</a>
-                <a href="#services-page" class="mobile-menu-link text-slate-800 hover:text-sky-700">Property Management</a>
-                <a href="#contact-page" class="mobile-menu-link text-slate-800 hover:text-sky-700">Contact</a>
-                <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties?minOccupancy=1" target="_blank" class="mt-4 bg-sky-700 text-white font-bold py-3 px-8 rounded-lg">
+                <a href="#home" class="mobile-menu-link text-slate-800 hover:text-brand">Home</a>
+                <a href="#properties" class="mobile-menu-link text-slate-800 hover:text-brand">Our Properties</a>
+                <a href="#services-page" class="mobile-menu-link text-slate-800 hover:text-brand">Property Management</a>
+                <a href="#contact-page" class="mobile-menu-link text-slate-800 hover:text-brand">Contact</a>
+                <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties?minOccupancy=1" target="_blank" class="mt-4 bg-brand text-white font-bold py-3 px-8 rounded-lg">
                     Book Your Stay
                 </a>
             </div>
@@ -142,7 +157,7 @@
                 <div class="max-w-3xl mx-auto">
                     <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 hero-text-shadow">Your Coastal Stay in Myrtle Beach.</h1>
                     <p class="text-lg md:text-xl text-slate-200 hero-text-shadow">A curated collection of professionally managed homes for a clean, comfortable, and seamless stay.</p>
-                     <a href="#properties" class="mt-8 bg-white text-sky-700 font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-slate-100 transition transform hover:scale-105 duration-300 inline-block">
+                     <a href="#properties" class="mt-8 bg-white text-brand font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-slate-100 transition transform hover:scale-105 duration-300 inline-block">
                         View Our Properties
                     </a>
                 </div>
@@ -154,7 +169,8 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-4xl font-bold text-slate-900">Our Coastal Rentals</h2>
-                    <p class="text-slate-600 mt-4 max-w-3xl mx-auto text-lg">
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+                    <p class="text-slate-600 mt-6 max-w-3xl mx-auto text-lg">
                         Each property is hand-picked and meticulously maintained to ensure a five-star experience for our guests. Find your ideal home away from home.
                     </p>
                 </div>
@@ -170,50 +186,50 @@
                             <p class="text-slate-600 mb-4">A modern 3-bedroom beach house, just 2.5 blocks from the beach. Enjoy the open-concept living area, private patio, and a stylish coastal getaway.</p>
                              <div class="flex items-center text-slate-500 text-sm mb-4 space-x-4">
                                 <span>3 Bedrooms</span>
-                                <span class="text-slate-300">•</span>
+                                <span class="text-accent font-bold">•</span>
                                 <span>2.5 Bathrooms</span>
-                                <span class="text-slate-300">•</span>
+                                <span class="text-accent font-bold">•</span>
                                 <span>Sleeps 9</span>
                             </div>
-                            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties/689f930fd205f500101607be?minOccupancy=1" target="_blank" class="bg-sky-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
+                            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties/689f930fd205f500101607be?minOccupancy=1" target="_blank" class="bg-brand text-white font-bold py-3 px-6 rounded-lg hover:bg-brand-dark transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
                         </div>
                     </div>
 
                     <!-- Property Card 2: Rosemary Retreat -->
                     <div class="bg-slate-50 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group property-card">
                         <div class="overflow-hidden">
-                            <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760927931/Screenshot_2025-10-19_7.30.45_PM_q7hfhz.png" alt="Image of Rosemary Retreat property" class="w-full h-64 object-cover property-card-img">
+                            <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760927931/Screenshot_2025-10-19_7.31.28_PM_t5zoxy.png" alt="Image of Rosemary Retreat property" class="w-full h-64 object-cover property-card-img">
                         </div>
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-2 text-slate-900">Rosemary Retreat</h3>
                             <p class="text-slate-600 mb-4">Make lasting memories in this cozy retreat! Located in a family-friendly neighborhood with a golf cart included for convenient beach access.</p>
                              <div class="flex items-center text-slate-500 text-sm mb-4 space-x-4">
                                 <span>3 Bedrooms</span>
-                                <span class="text-slate-300">•</span>
+                                <span class="text-accent font-bold">•</span>
                                 <span>2 Bathrooms</span>
-                                <span class="text-slate-300">•</span>
+                                <span class="text-accent font-bold">•</span>
                                 <span>Sleeps 10</span>
                             </div>
-                            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties/689f93161a60d000133a35b3?minOccupancy=1" target="_blank" class="bg-sky-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
+                            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties/689f93161a60d000133a35b3?minOccupancy=1" target="_blank" class="bg-brand text-white font-bold py-3 px-6 rounded-lg hover:bg-brand-dark transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
                         </div>
                     </div>
 
                     <!-- Property Card 3: Shore Dr Sunset Retreat -->
                     <div class="bg-slate-50 rounded-lg shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group property-card">
                         <div class="overflow-hidden">
-                            <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760927931/Screenshot_2025-10-19_7.31.28_PM_t5zoxy.png" alt="Image of Shore Dr Sunset Retreat property" class="w-full h-64 object-cover property-card-img">
+                            <img src="https://res.cloudinary.com/dvdxbzv6a/image/upload/v1760927931/Screenshot_2025-10-19_7.30.45_PM_q7hfhz.png" alt="Image of Shore Dr Sunset Retreat property" class="w-full h-64 object-cover property-card-img">
                         </div>
                         <div class="p-6">
                             <h3 class="text-2xl font-bold mb-2 text-slate-900">Shore Dr Sunset Retreat</h3>
                             <p class="text-slate-600 mb-4">Steps from the beach, this cozy condo is perfect for families and golfers. Walk to Ocean Annie's, restaurants, and live music!</p>
                             <div class="flex items-center text-slate-500 text-sm mb-4 space-x-4">
                                 <span>3 Bedrooms</span>
-                                <span class="text-slate-300">•</span>
+                                <span class="text-accent font-bold">•</span>
                                 <span>2 Bathrooms</span>
-                                <span class="text-slate-300">•</span>
+                                <span class="text-accent font-bold">•</span>
                                 <span>Sleeps 8</span>
                             </div>
-                            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties/68bdf98ebec94b0010e6ead8?minOccupancy=1" target="_blank" class="bg-sky-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
+                            <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties/68bdf98ebec94b0010e6ead8?minOccupancy=1" target="_blank" class="bg-brand text-white font-bold py-3 px-6 rounded-lg hover:bg-brand-dark transition-transform transform group-hover:scale-105 duration-300 inline-block">Details & Booking</a>
                         </div>
                     </div>
                 </div>
@@ -225,26 +241,27 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-4xl font-bold text-slate-900">The Robin Coastal Rentals Difference</h2>
-                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto">We provide more than just a place to stay; we deliver a seamless, high-quality vacation experience.</p>
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+                    <p class="text-slate-600 mt-6 max-w-2xl mx-auto">We provide more than just a place to stay; we deliver a seamless, high-quality vacation experience.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                     <div class="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <i data-feather="star" class="h-10 w-10 mx-auto text-sky-700 mb-3"></i>
+                        <i data-feather="star" class="h-10 w-10 mx-auto text-brand mb-3"></i>
                         <h3 class="font-bold text-lg mb-2">Pristine Properties</h3>
                         <p class="text-slate-600 text-sm">Every home is professionally cleaned and maintained to the highest standards before your arrival.</p>
                     </div>
                     <div class="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <i data-feather="message-circle" class="h-10 w-10 mx-auto text-sky-700 mb-3"></i>
+                        <i data-feather="message-circle" class="h-10 w-10 mx-auto text-brand mb-3"></i>
                         <h3 class="font-bold text-lg mb-2">Personalized Service</h3>
                         <p class="text-slate-600 text-sm">Direct communication with our local team ensures your needs are met promptly.</p>
                     </div>
                      <div class="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <i data-feather="map-pin" class="h-10 w-10 mx-auto text-sky-700 mb-3"></i>
+                        <i data-feather="map-pin" class="h-10 w-10 mx-auto text-brand mb-3"></i>
                         <h3 class="font-bold text-lg mb-2">Local Expertise</h3>
                         <p class="text-slate-600 text-sm">Get the best recommendations for dining, activities, and hidden gems from true locals.</p>
                     </div>
                     <div class="text-center p-6 bg-white rounded-lg shadow-sm">
-                        <i data-feather="dollar-sign" class="h-10 w-10 mx-auto text-sky-700 mb-3"></i>
+                        <i data-feather="dollar-sign" class="h-10 w-10 mx-auto text-brand mb-3"></i>
                         <h3 class="font-bold text-lg mb-2">Best Rates Guaranteed</h3>
                         <p class="text-slate-600 text-sm">Booking direct with us means you avoid extra fees charged by third-party travel sites.</p>
                     </div>
@@ -257,7 +274,8 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-4xl font-bold text-slate-900">Explore Myrtle Beach</h2>
-                    <p class="text-slate-600 mt-4 max-w-2xl mx-auto">From sandy shores to lively entertainment, our properties offer the best of the Grand Strand at your doorstep.</p>
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+                    <p class="text-slate-600 mt-6 max-w-2xl mx-auto">From sandy shores to lively entertainment, our properties offer the best of the Grand Strand at your doorstep.</p>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-slate-50 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
@@ -297,17 +315,21 @@
             <div class="container mx-auto px-6">
                  <div class="text-center mb-12">
                     <h2 class="text-4xl font-bold text-slate-900">What Our Guests Are Saying</h2>
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-accent text-2xl mb-2">★★★★★</div>
                         <p class="text-slate-600 italic">"Our family had the best vacation! The home was gorgeous, perfectly clean, and just a quick walk to the beach. Robin was so responsive and helpful with all our questions."</p>
                         <p class="font-bold mt-4">- The Miller Family</p>
                     </div>
                     <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-accent text-2xl mb-2">★★★★★</div>
                         <p class="text-slate-600 italic">"Booking with Robin Coastal Rentals was a breeze. Professional service from start to finish. The condo had beautiful views and was even better than the pictures."</p>
                         <p class="font-bold mt-4">- Walter C.</p>
                     </div>
                     <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-accent text-2xl mb-2">★★★★★</div>
                         <p class="text-slate-600 italic">"The perfect setting for our trip. Robin's local tips were fantastic and helped us discover some great spots. We will definitely be booking with her again for our next visit!"</p>
                         <p class="font-bold mt-4">- James T.</p>
                     </div>
@@ -316,10 +338,10 @@
         </section>
 
         <!-- Final CTA -->
-        <section class="py-20 bg-sky-700">
+        <section class="py-20 bg-brand">
             <div class="container mx-auto px-6 text-center text-white">
                 <h2 class="text-4xl font-bold">Your Myrtle Beach Escape Awaits</h2>
-                <p class="mt-4 text-lg max-w-2xl mx-auto text-sky-200">Ready for sunshine and ocean breezes? Find your perfect rental and book direct for the best experience.</p>
+                <p class="mt-4 text-lg max-w-2xl mx-auto text-teal-200">Ready for sunshine and ocean breezes? Find your perfect rental and book direct for the best experience.</p>
 
                 <!-- Direct Booking Benefits -->
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
@@ -327,29 +349,29 @@
                         <i data-feather="dollar-sign" class="h-8 w-8 text-white mr-3 md:mr-0 md:mb-2"></i>
                         <div class="text-left md:text-center">
                             <h3 class="font-bold">Best Rate Guaranteed</h3>
-                            <p class="text-sky-200 text-sm">Avoid third-party fees</p>
+                            <p class="text-teal-200 text-sm">Avoid third-party fees</p>
                         </div>
                     </div>
                     <div class="flex items-center justify-center md:flex-col">
                         <i data-feather="message-circle" class="h-8 w-8 text-white mr-3 md:mr-0 md:mb-2"></i>
                          <div class="text-left md:text-center">
                             <h3 class="font-bold">Direct Communication</h3>
-                            <p class="text-sky-200 text-sm">Personalized service</p>
+                            <p class="text-teal-200 text-sm">Personalized service</p>
                         </div>
                     </div>
                     <div class="flex items-center justify-center md:flex-col">
                         <i data-feather="gift" class="h-8 w-8 text-white mr-3 md:mr-0 md:mb-2"></i>
                          <div class="text-left md:text-center">
                             <h3 class="font-bold">Exclusive Perks</h3>
-                            <p class="text-sky-200 text-sm">Early check-in options</p>
+                            <p class="text-teal-200 text-sm">Early check-in options</p>
                         </div>
                     </div>
                 </div>
 
-                <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties?minOccupancy=1" target="_blank" class="bg-white text-sky-700 font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-slate-100 transition transform hover:scale-105 duration-300 mt-12 inline-block">
+                <a href="https://robinshomakercoastalrentals.guestybookings.com/en/properties?minOccupancy=1" target="_blank" class="bg-white text-brand font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-slate-100 transition transform hover:scale-105 duration-300 mt-12 inline-block">
                     Browse All Properties
                 </a>
-                 <p class="mt-6 text-sky-200 text-sm">
+                 <p class="mt-6 text-teal-200 text-sm">
                     Have questions before you book? <a href="#contact-page" class="page-link font-bold underline hover:text-white transition-colors">Contact us!</a>
                 </p>
             </div>
@@ -366,7 +388,7 @@
                 <p class="text-slate-600 mt-4 max-w-3xl mx-auto text-lg">
                     We provide unparalleled care for your Myrtle Beach home, turning your investment into a thriving, worry-free asset.
                 </p>
-                <a href="#contact-page" class="page-link mt-8 bg-sky-700 text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-sky-600 transition transform hover:scale-105 duration-300 inline-block">
+                <a href="#contact-page" class="page-link mt-8 bg-brand text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-brand-dark transition transform hover:scale-105 duration-300 inline-block">
                     Get Your Free Consultation
                 </a>
             </div>
@@ -387,13 +409,16 @@
             <div class="mb-20">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-slate-900">What Our Homeowners Say</h2>
+                    <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-accent text-2xl mb-2">★★★★★</div>
                         <p class="text-slate-600 italic">"Partnering with Robin was the best decision we made for our rental property. Our booking calendar has never been this full, and the process is completely hands-off for us. The peace of mind is priceless."</p>
                         <p class="font-bold mt-4">- Joe</p>
                     </div>
                     <div class="bg-slate-50 p-8 rounded-lg shadow-sm">
+                        <div class="text-accent text-2xl mb-2">★★★★★</div>
                         <p class="text-slate-600 italic">"The professionalism and attention to detail are second to none. Robin's team treats our home with incredible care, and the owner dashboard makes it so easy to see our financial performance. Highly recommend!"</p>
                         <p class="font-bold mt-4">- Gerry</p>
                     </div>
@@ -403,12 +428,13 @@
             <!-- 4. The "What": Core Services Accordion -->
             <div class="text-center mb-20">
                 <h2 class="text-3xl font-bold text-slate-900 mb-4">Our Comprehensive Management Services</h2>
-                <p class="text-slate-600 mt-2 max-w-3xl mx-auto text-lg mb-12">We handle every detail so you can enjoy the benefits of ownership without the hassle. Click each service to learn more.</p>
+                <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+                <p class="text-slate-600 mt-6 max-w-3xl mx-auto text-lg mb-12">We handle every detail so you can enjoy the benefits of ownership without the hassle. Click each service to learn more.</p>
                 <div class="max-w-4xl mx-auto text-left space-y-4">
                     <!-- Accordion Item 1 -->
                     <div class="bg-slate-50 rounded-lg">
                         <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
-                            <span class="flex items-center"><i data-feather="camera" class="mr-4 text-sky-700"></i>Listing & Photography</span>
+                            <span class="flex items-center"><i data-feather="camera" class="mr-4 text-brand"></i>Listing & Photography</span>
                             <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
                         </button>
                         <div class="accordion-content">
@@ -425,7 +451,7 @@
                      <!-- Accordion Item 2 -->
                     <div class="bg-slate-50 rounded-lg">
                         <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
-                             <span class="flex items-center"><i data-feather="globe" class="mr-4 text-sky-700"></i>Multi-Channel Marketing</span>
+                             <span class="flex items-center"><i data-feather="globe" class="mr-4 text-brand"></i>Multi-Channel Marketing</span>
                              <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
                         </button>
                         <div class="accordion-content">
@@ -442,7 +468,7 @@
                     <!-- Accordion Item 3 -->
                     <div class="bg-slate-50 rounded-lg">
                         <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
-                             <span class="flex items-center"><i data-feather="dollar-sign" class="mr-4 text-sky-700"></i>Revenue Management</span>
+                             <span class="flex items-center"><i data-feather="dollar-sign" class="mr-4 text-brand"></i>Revenue Management</span>
                              <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
                         </button>
                         <div class="accordion-content">
@@ -459,7 +485,7 @@
                     <!-- Accordion Item 4 -->
                     <div class="bg-slate-50 rounded-lg">
                         <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
-                             <span class="flex items-center"><i data-feather="message-circle" class="mr-4 text-sky-700"></i>Guest Communication</span>
+                             <span class="flex items-center"><i data-feather="message-circle" class="mr-4 text-brand"></i>Guest Communication</span>
                              <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
                         </button>
                         <div class="accordion-content">
@@ -476,7 +502,7 @@
                      <!-- Accordion Item 5 -->
                     <div class="bg-slate-50 rounded-lg">
                         <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
-                             <span class="flex items-center"><i data-feather="star" class="mr-4 text-sky-700"></i>24/7 Guest Experience</span>
+                             <span class="flex items-center"><i data-feather="star" class="mr-4 text-brand"></i>24/7 Guest Experience</span>
                              <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
                         </button>
                         <div class="accordion-content">
@@ -493,7 +519,7 @@
                     <!-- Accordion Item 6 -->
                     <div class="bg-slate-50 rounded-lg">
                         <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
-                             <span class="flex items-center"><i data-feather="cpu" class="mr-4 text-sky-700"></i>Technology & Automation</span>
+                             <span class="flex items-center"><i data-feather="cpu" class="mr-4 text-brand"></i>Technology & Automation</span>
                              <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
                         </button>
                         <div class="accordion-content">
@@ -507,10 +533,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Accordion Item 7 -->
+                    <!-- AccordVion Item 7 -->
                     <div class="bg-slate-50 rounded-lg">
                         <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
-                             <span class="flex items-center"><i data-feather="settings" class="mr-4 text-sky-700"></i>On-the-Ground Operations</span>
+                             <span class="flex items-center"><i data-feather="settings" class="mr-4 text-brand"></i>On-the-Ground Operations</span>
                              <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
                         </button>
                         <div class="accordion-content">
@@ -527,7 +553,7 @@
                     <!-- Accordion Item 8 -->
                     <div class="bg-slate-50 rounded-lg">
                         <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
-                            <span class="flex items-center"><i data-feather="wind" class="mr-4 text-sky-700"></i>Pristine Housekeeping</span>
+                            <span class="flex items-center"><i data-feather="wind" class="mr-4 text-brand"></i>Pristine Housekeeping</span>
                             <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
                         </button>
                         <div class="accordion-content">
@@ -544,7 +570,7 @@
                      <!-- Accordion Item 9 -->
                     <div class="bg-slate-50 rounded-lg">
                         <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
-                            <span class="flex items-center"><i data-feather="tool" class="mr-4 text-sky-700"></i>Proactive Maintenance</span>
+                            <span class="flex items-center"><i data-feather="tool" class="mr-4 text-brand"></i>Proactive Maintenance</span>
                             <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
                         </button>
                         <div class="accordion-content">
@@ -561,7 +587,7 @@
                     <!-- Accordion Item 10 -->
                     <div class="bg-slate-50 rounded-lg">
                         <button class="accordion-button w-full flex justify-between items-center p-6 text-xl font-bold text-slate-800">
-                            <span class="flex items-center"><i data-feather="file-text" class="mr-4 text-sky-700"></i>Transparent Financials</span>
+                            <span class="flex items-center"><i data-feather="file-text" class="mr-4 text-brand"></i>Transparent Financials</span>
                             <i data-feather="plus" class="w-6 h-6 flex-shrink-0"></i>
                         </button>
                         <div class="accordion-content">
@@ -579,15 +605,15 @@
             </div>
 
             <!-- 5. The Differentiator: Guesty Dashboard -->
-            <div class="bg-sky-700 text-white rounded-lg p-10 md:p-16 flex flex-col md:flex-row items-center gap-8 mb-20">
+            <div class="bg-brand text-white rounded-lg p-10 md:p-16 flex flex-col md:flex-row items-center gap-8 mb-20">
                 <div class="md:w-1/3 text-center">
-                    <i data-feather="bar-chart-2" class="h-24 w-24 mx-auto text-sky-300 mb-4"></i>
+                    <i data-feather="bar-chart-2" class="h-24 w-24 mx-auto text-teal-300 mb-4"></i>
                     <h2 class="text-3xl font-bold">Complete Transparency</h2>
-                    <p class="text-sky-200">Powered by Guesty</p>
+                    <p class="text-teal-200">Powered by Guesty</p>
                 </div>
                 <div class="md:w-2/3">
                     <h3 class="text-3xl font-bold mb-4">Your Personal Owner Dashboard</h3>
-                    <p class="text-sky-200 mb-4 text-lg">
+                    <p class="text-teal-200 mb-4 text-lg">
                         We believe in full transparency. As a partner, you'll receive exclusive access to a secure owner portal where you can view your property's performance in real-time. Track bookings, view financial statements, and block your own vacation dates with ease, 24/7. It's your investment, and you deserve to have all the information at your fingertips.
                     </p>
                 </div>
@@ -596,12 +622,13 @@
             <!-- 6. The "How": Simple Process -->
             <div class="text-center mb-20">
                 <h2 class="text-3xl font-bold text-slate-900 mb-12">Our Simple Onboarding Process</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mt-4 mb-12"></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-5xl mx-auto">
                     <!-- Step 1 -->
                     <div class="relative">
                         <div class="flex items-center mb-4">
-                            <div class="bg-sky-700 text-white rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold z-10">1</div>
-                            <div class="flex-grow border-t-2 border-sky-200 ml-4"></div>
+                            <div class="bg-brand text-white rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold z-10">1</div>
+                            <div class="flex-grow border-t-2 border-accent ml-4"></div>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Consultation & Projection</h3>
                         <p class="text-slate-600">We start with a friendly chat to understand your goals and provide a custom income projection for your property.</p>
@@ -609,8 +636,8 @@
                     <!-- Step 2 -->
                     <div class="relative">
                          <div class="flex items-center mb-4">
-                            <div class="bg-sky-700 text-white rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold z-10">2</div>
-                            <div class="flex-grow border-t-2 border-sky-200 ml-4"></div>
+                            <div class="bg-brand text-white rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold z-10">2</div>
+                            <div class="flex-grow border-t-2 border-accent ml-4"></div>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Professional Onboarding</h3>
                         <p class="text-slate-600">Our team handles everything: professional photos, creating your listing, setting up smart locks, and preparing your home for guests.</p>
@@ -618,7 +645,7 @@
                     <!-- Step 3 -->
                     <div class="relative">
                          <div class="flex items-center mb-4">
-                            <div class="bg-sky-700 text-white rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold z-10">3</div>
+                            <div class="bg-brand text-white rounded-full h-12 w-12 flex items-center justify-center text-2xl font-bold z-10">3</div>
                         </div>
                         <h3 class="text-xl font-bold mb-2">Go Live & Track Success</h3>
                         <p class="text-slate-600">We launch your listing across all major platforms and give you access to your owner dashboard to watch the bookings roll in!</p>
@@ -630,7 +657,7 @@
             <div class="text-center">
                 <h2 class="text-3xl font-bold text-slate-900">Let's Partner Together</h2>
                 <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Ready to learn how much your property could earn? Contact us today for a free, no-obligation consultation and income projection.</p>
-                <a href="#contact-page" class="page-link mt-8 bg-sky-700 text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-sky-600 transition transform hover:scale-105 duration-300 inline-block">
+                <a href="#contact-page" class="page-link mt-8 bg-brand text-white font-bold py-4 px-10 text-lg rounded-lg shadow-xl hover:bg-brand-dark transition transform hover:scale-105 duration-300 inline-block">
                     Get Your Free Consultation
                 </a>
             </div>
@@ -642,7 +669,8 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h1 class="text-4xl font-bold text-slate-900">Get In Touch</h1>
-                <p class="text-slate-600 mt-4 max-w-2xl mx-auto">Whether you're a future guest or a homeowner, we'd love to hear from you. Reach out with any questions!</p>
+                <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+                <p class="text-slate-600 mt-6 max-w-2xl mx-auto">Whether you're a future guest or a homeowner, we'd love to hear from you. Reach out with any questions!</p>
             </div>
             <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-8 md:p-12 rounded-lg shadow-lg">
                 <!-- Contact Form -->
@@ -651,18 +679,18 @@
                     <form action="#" method="POST">
                         <div>
                             <label for="name" class="block text-sm font-medium text-slate-700">Full Name</label>
-                            <input type="text" name="name" id="name" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-sky-500 focus:ring-sky-500 sm:text-sm p-3">
+                            <input type="text" name="name" id="name" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand focus:ring-brand sm:text-sm p-3">
                         </div>
                          <div>
                             <label for="email" class="block text-sm font-medium text-slate-700">Email Address</label>
-                            <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-sky-500 focus:ring-sky-500 sm:text-sm p-3">
+                            <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand focus:ring-brand sm:text-sm p-3">
                         </div>
                          <div>
                             <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
-                            <textarea name="message" id="message" rows="4" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-sky-500 focus:ring-sky-500 sm:text-sm p-3"></textarea>
+                            <textarea name="message" id="message" rows="4" required class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand focus:ring-brand sm:text-sm p-3"></textarea>
                         </div>
                         <div>
-                           <button type="submit" class="w-full bg-sky-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-sky-600 transition-transform transform duration-300">
+                           <button type="submit" class="w-full bg-brand text-white font-bold py-3 px-6 rounded-lg hover:bg-brand-dark transition-transform transform duration-300">
                                 Send Message
                            </button>
                         </div>
@@ -673,25 +701,25 @@
                      <h3 class="text-2xl font-bold text-slate-800">Contact Information</h3>
                      <div>
                          <div class="flex items-center space-x-4">
-                            <i data-feather="mail" class="h-6 w-6 text-sky-700"></i>
+                            <i data-feather="mail" class="h-6 w-6 text-brand"></i>
                             <div>
                                 <h4 class="font-semibold">Email</h4>
-                                <a href="mailto:robin.wiserealtors@gmail.com" class="text-sky-600 hover:underline">robin.wiserealtors@gmail.com</a>
+                                <a href="mailto:robin.wiserealtors@gmail.com" class="text-brand hover:underline">robin.wiserealtors@gmail.com</a>
                             </div>
                          </div>
                      </div>
                       <div>
                          <div class="flex items-center space-x-4">
-                            <i data-feather="phone" class="h-6 w-6 text-sky-700"></i>
+                            <i data-feather="phone" class="h-6 w-6 text-brand"></i>
                             <div>
                                 <h4 class="font-semibold">Phone</h4>
-                                <a href="tel:+17037282627" class="text-sky-600 hover:underline">(703) 728-2627</a>
+                                <a href="tel:+17037282627" class="text-brand hover:underline">(703) 728-2627</a>
                             </div>
                          </div>
                      </div>
                       <div>
                          <div class="flex items-center space-x-4">
-                            <i data-feather="map-pin" class="h-6 w-6 text-sky-700"></i>
+                            <i data-feather="map-pin" class="h-6 w-6 text-brand"></i>
                             <div>
                                 <h4 class="font-semibold">Location</h4>
                                 <p class="text-slate-600">Myrtle Beach, SC 29577</p>
@@ -716,17 +744,17 @@
                 <div class="mb-6 md:mb-0">
                     <h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="hover:text-sky-400 transition-colors page-link">Home</a></li>
-                        <li><a href="#services-page" class="hover:text-sky-400 transition-colors page-link">Property Management</a></li>
-                        <li><a href="https://www.robinsellsatthebeach.com/" target="_blank" class="hover:text-sky-400 transition-colors">Real Estate Services</a></li>
-                        <li><a href="#contact-page" class="hover:text-sky-400 transition-colors page-link">Contact</a></li>
+                        <li><a href="#home" class="hover:text-teal-300 transition-colors page-link">Home</a></li>
+                        <li><a href="#services-page" class="hover:text-teal-300 transition-colors page-link">Property Management</a></li>
+                        <li><a href="https://www.robinsellsatthebeach.com/" target="_blank" class="hover:text-teal-300 transition-colors">Real Estate Services</a></li>
+                        <li><a href="#contact-page" class="hover:text-teal-300 transition-colors page-link">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-3">Connect With Us</h4>
                     <p class="mb-4">Myrtle Beach, South Carolina</p>
-                    <a href="mailto:robin.wiserealtors@gmail.com" class="hover:text-sky-400 transition-colors">robin.wiserealtors@gmail.com</a>
+                    <a href="mailto:robin.wiserealtors@gmail.com" class="hover:text-teal-300 transition-colors">robin.wiserealtors@gmail.com</a>
                 </div>
             </div>
             <div class="mt-12 border-t border-slate-700 pt-6 text-center text-sm text-slate-500">
